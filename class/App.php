@@ -39,7 +39,7 @@ class App{
   const TABLE_COMMUN_REGER = "commande_reger";
   const TABLE_COMMUN_PARAMYC = "commande_paramyc";
   //===============================================================
-  const TABLE_NEWSLETTER = "newsletter";
+  const TABLE_NEWSLETTER = "mfp_newsletters";
 
   //===============================================================
   //=========== TABLE PRoparacyto =================================
