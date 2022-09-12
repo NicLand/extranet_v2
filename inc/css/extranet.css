@@ -1,0 +1,13 @@
+.table-commande{
+  font-size:0.75em;
+}
+.spacvir_freezer{
+  background-color: var(--bs-purple);
+  opacity : 0.5;
+}
+.hoverDIV{
+  background-color: #fff;
+}
+.hoverDIV:hover{
+  background-color: #FCF;
+}
