@@ -48,6 +48,19 @@ Autoloader::register();
         <a class="link-dark" href="#">Lire la suite...</a>
         </div>
         </div>
+      </div><div name="zoom" class="m-2 p-2 row bg-success bg-opacity-50 text-white">
+        <h3>ZOOM</h3>
+        <div class="row">
+          <div class="col-4">
+          <img width="300px" src="test/zoom.jpg" alt="" />
+        </div>
+        <div class="col">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in orci eu tortor iaculis aliquam. Nunc sit amet turpis eu orci cursus posuere. Vivamus pretium vestibulum rutrum. Donec tristique hendrerit vehicula. Ut eget ex a magna pretium gravida ac in elit. Maecenas eu elementum arcu, et malesuada leo. Quisque quis ligula lacinia nibh auctor hendrerit at ac libero. Morbi eu euismod mi, nec imperdiet risus. </p>
+        </div>
+        <div class="float-end">
+        <a class="link-dark" href="#">Lire la suite...</a>
+        </div>
+        </div>
       </div>
       <div class="row m-2 p-2 bg-white" name="vie">
         <h3>Vie Scientifique</h3>
@@ -64,9 +77,9 @@ Autoloader::register();
         </div>
       </div>
       <div class="row m-2 bg-danger">
-      <div name="photo" class="col-6 bg-dark">
+      <div name="photo" class="col-6 bg-dark text-center">
         <h3 class="text-white text-center">Photo du jour</h3>
-        <img class="p-2" width="100%" src="test/photo.jpg" alt=""/>
+        <img class="p-2" width="50%" src="test/photo.jpg" alt=""/>
         <p class="text-center text-white">Crédit inconnu</p>
         <div class="float-start">
           <a class="link-light" href="#">Lire la suite...</a>
