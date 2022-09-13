@@ -4,8 +4,8 @@ namespace Extranet;
 require '../class/Autoloader.php';
 Autoloader::register();
 
-$NL = new Newsletter;
-$nl = $NL->getNewsletter(19);
+//$NL = new Newsletter;
+//$nl = $NL->getNewsletter(19);
 ?>
 <html>
   <head>
@@ -17,7 +17,7 @@ $nl = $NL->getNewsletter(19);
     </style>
   </head>
   <body class="bg-dark bg-opacity-25">
-    <div class="container-md">
+    <div class="container">
       <div class="m-2 p-2 bg-white">
         <h1 class="display-1">My Favorite Page <span class="text-danger">#22</span><img class="float-end me-2" width="180px" src="test/logo_mfp.gif"/></h1>
       </div>
