@@ -1,415 +1,200 @@
 <?php
 namespace Extranet;
+
 require '../class/Autoloader.php';
 Autoloader::register();
-$NL = $_GET['nl'];
-
-$nl = new Newsletter;
-$newsletter = $nl->getNewsletter($NL);
-
-
-$lireLasuite = 'http://www.mfp.cnrs.fr/mfp/newsletter/article.php?nl='.$NL.'&cat=';
+if(isset($_GET['id']) && $_GET['id'] !=""){
+  $id = $_GET['id'];
+}
+$news = new Newsletter;
+$nl = $news->getNewsletter($id);
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Newsletter du MFP #<?php echo $NL;?> </title>
-</head>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>My Favorite Page #22</title>
+    <style>
+       /* Add custom classes and styles that you want inlined here */
+    </style>
+  </head>
+  <body class="bg-dark bg-opacity-25">
+    <div class="container w-75">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide m-2" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
 
-<body style="font-family:Arial, Helvetica, sans-serif; background-color:#F4F4F4;">
-<table height="100" width="600" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color:#fff;">
-<tr>
-<td>
-<!-- Banniere -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-	<tr>
-    	<td height="25" colspan="2" style="background-color:#333333; color:#fff; font-size:11px; text-align:center; border-bottom:1px solid #fff;">Pour visualiser la newsletter sur votre navigateur, <a style="color:#cccccc" href="http://www.mfp.cnrs.fr/mfp/newsletter/newsletter.php?nl=<?php echo $NL;?>">cliquez ici</a>.</td>
-    </tr>
-	<tr>
-		<td colspan="2"><img src="http://www.mfp.cnrs.fr/extranet_v2/newsletter/img/banniere<?php echo $NL;?>.jpg" /></td>
-	</tr>
-	<tr>
-    	<td style="background-color:#fff;" width="10%"></td>
-  		<td height="5" style="background-color:#fff;"></td>
-  	</tr>
-</table>
-</td>
-</tr>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="img/nl22/ban_adeno.jpg" class="d-block w-100" alt="...">
+          </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="img/nl22/ban_imet.png.png" class="d-block w-100" alt="...">
 
-<tr>
-<td>
-<!-- Bloc EDITO -->
-<table width="100%" cellpadding="0" cellspacing="1" border="0" style="background-color:#fff;">
-	<tr>
-    	<td width="2%" rowspan="4"></td>
-        <td>
-          <h2><?php echo $newsletter->editoTitre;?></h2></td>
-        <td width="2%" rowspan="4"></td>
-    </tr>
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_armyne.png" class="d-block w-100" alt="...">
 
-	<tr>
-	  <td><?php echo $newsletter->editoResume;?></td>
-	  </tr>
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_proparacyto.png" class="d-block w-100" alt="...">
 
-	<tr>
-	  <td align="right"><a href="<?php echo $lireLasuite;?>1" style="color:#333333; font-size:10px;">Lire la suite...</a></td>
-	  </tr>
-    <tr>
-    	<td colspan="5" height="4"></td>
-    </tr>
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_andevir.png" class="d-block w-100" alt="...">
 
-</table>
-</td>
-</tr>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      </div>
 
-<tr>
-<td>
-<!-- Bloc Zoom -->
-<table width="100%" border="0" cellspacing="1" style="background-color:#cccccc">
-  <tr>
-    <td width="2%" rowspan="4"></td>
-    <td><h3><?php echo $newsletter->zoomTitre;?></h3></td>
-    <td width="2%" rowspan="4"></td>
-  </tr>
-  <?php if (!empty($newsletter->zoomSousTitre)){  ?>
-  <tr>
-    <td><h4><?php echo $newsletter->zoomSousTitre;?></h4></td>
-  </tr><?php } ?>
-  <tr>
-    <td><?php echo $newsletter->zoomResume;?></td>
-  </tr>
-  <tr>
-    <td align="right"><a href="<?php echo $lireLasuite;?>2" style="color:#000; font-size:10px;">Lire la suite...</a></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td height="10"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-</td>
-</tr>
+      <div class="m-2 p-2 bg-white">
+        <h1 class="display-1">My Favorite Page <span class="text-danger">#<?=$id;?></span><img class="float-end me-2" width="180px" src="test/logo_mfp.gif"/></h1>
+      </div>
+      <div class="row m-2 p-2 bg-white" name="edito">
+        <h3><?= $nl->editoTitre;?></h3>
+        <div class="row">
+        <div class="col">
+        <?= $nl->editoResume;?>
+      </div>
+      <div class="float-end">
+        <a class="link-dark" href="article.php?nl=22&cat=edito">Lire la suite...</a>
+      </div>
+    </div>
+    </div>
+      <div name="zoom" class="m-2 p-2 row bg-warning bg-opacity-50">
+        <?=$nl->zoomTitre;?>
+        <div class="row">
+        <div class="col">
+        <p><?=$nl->zoomResume;?></p>
+      </div>
+        <div class="float-end">
+        <a class="link-dark" href="article.php?nl=22&cat=zoom">Lire la suite...</a>
+        </div>
+        </div>
+      </div>
+      <div name="zoom" class="m-2 p-2 row bg-success bg-opacity-50 text-white">
+        <?=$nl->zoomTitre;?>
+        <div class="row">
+        <div class="col">
+        <p><?=$nl->zoomResume;?></p>
+      </div>
+        <div class="float-end">
+        <a class="link-dark" href="article.php?nl=22&cat=zoom">Lire la suite...</a>
+        </div>
+        </div>
+      </div>
+      <div class="row m-2 p-2 bg-white" name="vie">
+        <?=$nl->vieTitre;?>
+        <div class="row">
+        <div class="col">
+        <p><?=$nl->vieResume;?></p>
+      </div>
+        <div class="float-end">
+        <a class="link-dark" href="article.php?nl=22&cat=tribune">Lire la suite...</a>
+        </div>
+        </div>
+      </div>
+      <div class="row m-2 bg-danger">
+      <div name="photo" class="col-6 bg-dark text-center">
+        <h3 class="text-white text-center">Photo du jour</h3>
+        <div class="row">
+          <div class="col">
+        <?=$nl->photoResume;?>
+        </div>
+        <div class="float-start">
+          <a class="link-light" href="article.php?nl=22&cat=photo">Lire la suite...</a>
+        </div>
+      </div>
+      </div>
+      <div class="col-6 bg-danger align-self-center">
+      <div name="chiffre" class="align-self-center">
+        <h1 class="display-1 text-white text-center"><?=$nl->chiffreTitre;?></h1>
+      </div>
+      <div class="float-start">
+        <a class="link-dark" href="article.php?nl=22&cat=chiffre">Lire la suite...</a>
+      </div>
+    </div>
+    </div>
+      <div class="row m-2 p-2 bg-white" name="carteBlanche">
+        <div class="col">
+          <h3><?= $nl->tribuneTitre;?></h3>
+          <?= $nl->tribuneResume;?>
+        </div>
+        <div class="float-end">
+          <a class="link-dark" href="article.php?nl=22&cat=tribune">Lire la suite...</a>
+        </div>
+      </div>
+      <div class="row m-2">
+      <div name="breves" class="col p-3 bg-info bg-opacity-50">
+        <span class="h3 align-bottom">Brèves de paillasse...  </span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chat-text" viewBox="0 0 16 16">
+  <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
+  <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
+</svg>
+        <div class="m-2 p-2">
+        <ul>
+          <li>Arrivées, départs, distinctions </li>
+          <li>Recrutement</li>
+          <li>Valorisation scientifique</li>
+          <li>Nouvelle maquette de la NL</li>
+          <li>Publications, DD, Recette...</li>
+        </ul>
+      </div>
+      <div class="float-start">
+        <a class="link-dark" href="article.php?nl=22&cat=breve">Lire la suite...</a>
+      </div>
+      </div>
+      <div class="col p-3 bg-dark bg-opacity-50 text-white" name="agenda">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+          <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+        </svg>
+        <span class="h3 align-bottom"> Agenda</span>
+        <div class="m-2 p-2">
+          <ul>
+            <li>Conférences SBM</li>
+            <li>CAP SCIENCE</li>
+            <li>CONGRES</li>
+            <li>Philosophy and Biology seminar in Bordeaux</li>
+            <li>FORMATIONS</li>
+            <li>ET A NE PAS OUBLIER...</li>
+          </ul>
+        </div>
+        <div class="float-start">
+          <a class="link-light" href="article.php?nl=22&cat=agenda">Lire la suite...</a>
+        </div>
+      </div>
+    </div>
+    <div name="footer" class="m-2 p-2 bg-white">
+      <div class="row text-center">
+        <p>Cette lettre est publiée par le comité de rédaction de la Newsletter de l'UMR5234</p>
+        <p>Pour toute question concernant cette lettre, écrivez à Christina Calmels.</p>
+        <p>Responsable de la publication : Frédéric Bringaud</p>
+        <p>Responsables de la rédaction : Christina Calmels et Patricia Pinson</p>
+        <p>Comité de rédaction : Corinne Asencio, Marie-Lise Blondot, Floriane Lagadec, Paul Lesbats.</p>
+        <p>Intégration / Design : Nicolas Landrein.</p>
+      </div>
+    </div>
+    </div>
 
-<!-- Bloc à trois colonnes -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
-
-<tr>
-<td>
-<table width="100%" border="0" cellspacing="0">
-  <tr>
-
-  <!-- Colonne 1 -->
-
-    <td width="33%">
-    <table width="100%" border="0" cellspacing="0">
-  <tr valign="top">
-
-  <!-- Cellule 1 haut -->
-
-    <td valign="top">
-
-    <table width="100%" border="0" cellspacing="0" style="background-color:#333333;">
-  <tr>
-    <td width="5" rowspan="4"></td>
-    <td height="10"></td>
-    <td width="5" rowspan="4"></td>
-  </tr>
-  <tr>
-    <td style="color:#fff; text-align:center;"><h3>PHOTO DU JOUR</h3></td>
-    </tr>
-  <tr>
-    <td style="color:#fff; text-align:center;"><?php echo $newsletter->photoResume;?></td>
-  </tr>
-
-  <tr>
-    <td style="color:#fff; text-align:center;"><a href="<?php echo $lireLasuite;?>3" style="color:#fff; font-size:10px;">Lire la suite...</a></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td height="10"></td>
-    <td></td>
-  </tr>
-    </table>
-
-    </td>
-  </tr>
-  <tr>
-    <!-- Cellule 2 bas -->
-
-    <td><table width="100%" border="0" cellspacing="0">
-      <tr>
-        <td width="5" rowspan="5"></td>
-        <td height="10"></td>
-        <td width="5" rowspan="5"></td>
-      </tr>
-
-      <tr>
-        <td height="10"></td>
-      </tr>
-      <tr>
-        <td align="center"><h2><?php $newsletter->vieTitre;?></h2></td>
-      </tr>
-      <tr>
-        <td align="center"><h4><em><?php echo $newsletter->vieSousTitre;?></em></h4></td>
-      </tr>
-      <tr>
-        <td align="center"><?php echo $newsletter->vieResume;?></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td align="right"><a href="<?php echo $lireLasuite;?>6" style="color:#333333; font-size:10px;">Lire la suite...</a></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td height="10"></td>
-        <td></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-
-    </td>
-
-  <!-- colonne 2 -->
-    <!-- Cellule 3 haut -->
-
-    <td width="34%">
-    <table width="100%" border="0" cellspacing="0">
-  <tr>
-    <td valign="top" style="border:1px solid black">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="5" rowspan="5"></td>
-    <td height="10"></td>
-    <td width="5" rowspan="5"></td>
-  </tr>
-  <tr>
-    <td align="center" style="font-size:20px; font-weight:bold;"><?php echo $newsletter->vieLaboTitre?></td>
-  </tr>
-  <tr>
-    <td height="10"><?php echo $newsletter->vieLaboResume?></td>
-  </tr>
-  <tr>
-    <td align="center"></td>
-  </tr>
-  <tr>
-    <td align="right"><a href="<?php echo $lireLasuite;?>8" style="color:#333333; font-size:10px;">Lire la suite...</a></td>
-    </tr>
-    <tr>
-    <td height="10"></td>
-  </tr>
-    </table>
-    </td>
-  </tr>
-    <!-- Cellule 4 bas -->
-
-  <tr>
-    <td><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#cccccc">
-      <tr>
-        <td width="5" rowspan="7"></td>
-        <td height="10"></td>
-        <td width="5" rowspan="7"></td>
-      </tr>
-      <tr>
-        <td><h2>Brèves</h2><h3>de paillasse...</h3></td>
-      </tr>
-      <tr>
-        <td></td>
-      </tr>
-      <tr>
-        <td height="10"></td>
-      </tr>
-      <tr>
-        <td>
-
-
-
-        </td>
-      </tr>
-      <tr>
-        <td style="font-weight:bold"><?php echo $newsletter->breveResume;?></td>
-      </tr>
-      <tr>
- <td align="right"><a href="<?php echo $lireLasuite;?>7" style="color:#000; font-size:10px;">Lire la suite...</a></td>
- </tr>
-      <tr>
-        <td></td>
-        <td height="10"></td>
-        <td></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-    </td>
-
-  <!-- colonne 3 -->
-    <td width="33%">
-    <table width="100%" border="0" cellspacing="0">
-  <tr>
-  <!-- cellule 5 haut -->
-    <td>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FF0000">
-  <tr>
-    <td width="5" rowspan="5"></td>
-    <td height="35"></td>
-    <td width="5" rowspan="5"></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="<?php echo $lireLasuite;?>4" style="text-decoration:none;font-size:40px; color:#fff; font-weight:bold;"><?php echo $newsletter->chiffreTitre; ?></a></td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-  </tr>
-  <tr>
-<td align="center"><a href="<?php echo $lireLasuite;?>4" style="color:#fff; font-size:10px;">Lire la suite...</a></td>
-</tr>
-  <tr>
-    <td height="35"></td>
-  </tr>
-    </table>
-
-    </td>
-  </tr>
-  <tr>
-  <!-- cellule 6 bas -->
-    <td style="border:1px solid black;">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="5" rowspan="9"></td>
-    <td height="10"></td>
-    <td width="5" rowspan="9"></td>
-  </tr>
-  <tr>
-    <td height="40" align="center" style="background-color:#000; color:#fff; font-size:18px; font-weight:bold">CARTE BLANCHE</td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-  </tr>
-  <tr>
-    <td align="center" style="font-weight:bold;"><?php echo $newsletter->tribuneTitre;?></td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-  </tr>
-  <tr>
-    <td align="center" style="font-size:14px;"><?php echo $newsletter->tribuneResume;?></td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-  </tr>
-  <tr>
-<td align="right"><a href="<?php echo $lireLasuite;?>5" style="color:#333333; font-size:10px;">Lire la suite...</a></td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-  </tr>
-    </table>
-    </td>
-  </tr>
-</table>
-    </td>
-  </tr>
-</table>
-</td>
-</tr>
-
-<!-- Bloc Agenda -->
-
-<tr>
-<td>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#333333" style="color:#fff;">
-  <tr>
-    <td width="10" rowspan="7"></td>
-    <td height="10" colspan="2"></td>
-    <td width="10" rowspan="7"></td>
-  </tr>
-  <tr>
-    <td colspan="2" style="font-size:20px; font-weight:bold;">SAVE THE DATE</td>
-  </tr>
-  <tr>
-    <td height="10" colspan="2"></td>
-  </tr>
-  <tr>
-    <td valign="top"><?php echo $newsletter->agendaResume;?></td>
-  </tr>
-  <tr>
-    <td colspan="2" height="10"></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="right"><a href="<?php echo $lireLasuite;?>9" style="color:#fff; font-size:10px;">Lire la suite...</a></td>
-  </tr>
-  <tr>
-    <td colspan="2" height="10"></td>
-  </tr>
-</table></td>
-</tr>
-
-
-<!-- Bloc footer -->
-
-<tr>
-<td>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="10" rowspan="11"></td>
-    <td height="10" colspan="3"></td>
-    <td width="10" rowspan="11">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:11px; border-top:1px dashed #333;">Cette lettre est publiée par le comité de rédaction de la Newsletter de l'UMR5234</td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:10px;">Pour toute question concernant cette lettre, écrivez à <a style="color:#666" href="mailto:christina.calmels@u-bordeaux.fr">Christina Calmels</a>.</td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:10px;">Responsable de la publication : Frédéric Bringaud
-</td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:10px;">Responsables de la rédaction : Christina Calmels et Patricia Pinson
-</td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:10px;">Comité de rédaction : Corinne Asencio, Marie-Lise Blondot, Anne Cayrel, Floriane Lagadec, Paul Lesbats.</td>
-  </tr>
-	<tr>
-    <td colspan="3" align="center" style="font-size:10px;">Intégration / Design : Nicolas Landrein.</td>
-  </tr>
-  <tr>
-    <td height="10" colspan="3"></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="http://www.cnrs.fr" target="_blank"><img src="http://www.mfp.cnrs.fr/mfp/newsletter/img/logo_cnrs.jpg" alt="CNRS" height="65"></a></td>
-    <td align="center"><a href="https://www.mfp.cnrs.fr" target="_blank"><img src="http://www.mfp.cnrs.fr/mfp/newsletter/img/logo_mfp.gif" alt="MFP" height="65"></a></td>
-    <td align="center"><a href="http://www.u-bordeaux.fr" target="_blank"><img src="http://www.mfp.cnrs.fr/mfp/newsletter/img/logo_u-bordeaux.jpg" alt="Univ Bordeaux" height="65"></a></td>
-  </tr>
-  <tr>
-    <td colspan="3" height="10"></td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:10px;"><span align="center">Vous recevez ce courrier électronique car vous êtes inscrit comme membre du personnel de l'UMR5234.</span></td>
-  </tr>
-  <tr>
-    <td colspan="3" align="center" style="font-size:10px"><span align="center">Vous pouvez vous désabonner de cette liste en <a style="color:#666;" href="mailto:christina.calmels@u-bordeaux.fr?subject=Desabonnement_de_la_newsletter&body=Veuillez_me_desabonner SVP.">cliquant ici</a></span></td>
-  </tr>
-  <tr>
-    <td height="10"></td>
-    <td colspan="3" height="10"></td>
-    <td height="10"></td>
-  </tr>
-</table>
-</td>
-</tr>
-
-</table>
-
-
-</body>
+  </body>
 </html>

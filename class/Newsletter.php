@@ -19,7 +19,7 @@ class Newsletter{
   public function getNewsletter($id){
     return Database::query("SELECT * FROM $this->table WHERE id=$id")->fetch();
   }
-
+/*
   public function afficheListNewsletter(){
     $newsletters = self::getNewsletters();
     foreach($newsletters as $newsletter){
@@ -84,5 +84,5 @@ class Newsletter{
     $affiche = '<img src="img/banniere'.$id.'.jpg" class="mx-auto d-block" alt="banniere">';
     return $affiche;
   }
-
+*/
 }

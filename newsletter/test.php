@@ -12,12 +12,53 @@ Autoloader::register();
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>My Favorite Page #22</title>
     <style>
        /* Add custom classes and styles that you want inlined here */
     </style>
   </head>
   <body class="bg-dark bg-opacity-25">
-    <div class="container">
+    <div class="container w-75">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide m-2" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="img/nl22/ban_adeno.jpg" class="d-block w-100" alt="...">
+          </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="img/nl22/ban_imet.png.png" class="d-block w-100" alt="...">
+
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_armyne.png" class="d-block w-100" alt="...">
+
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_proparacyto.png" class="d-block w-100" alt="...">
+
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_andevir.png" class="d-block w-100" alt="...">
+
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+      </div>
+
       <div class="m-2 p-2 bg-white">
         <h1 class="display-1">My Favorite Page <span class="text-danger">#22</span><img class="float-end me-2" width="180px" src="test/logo_mfp.gif"/></h1>
       </div>
@@ -25,40 +66,47 @@ Autoloader::register();
         <h3>Edito</h3>
         <div class="row">
         <div class="col">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in orci eu tortor iaculis aliquam. Nunc sit amet turpis eu orci cursus posuere. Vivamus pretium vestibulum rutrum. Donec tristique hendrerit vehicula. Ut eget ex a magna pretium gravida ac in elit. Maecenas eu elementum arcu, et malesuada leo. Quisque quis ligula lacinia nibh auctor hendrerit at ac libero. Morbi eu euismod mi, nec imperdiet risus. </p>
+        <p>Septembre est arrivé, c’est l’heure de la rentrée !</p>
+        <p>En ce début d’année universitaire, le MFP accueille ses nouveaux et nouvelles arrivant(e)s.
+          Dans le zoom, nous vous proposons pour exemple, de découvrir le parcours de l’une d’entre elles, Sonia Burrel, virologue qui rejoint l’équipe SpacVir.
+</p>
+          <p>Bonne lecture à tous !</p>
       </div>
       <div class="col-4">
-      <img width="300px" src="test/edito.jpg" alt="" />
+      <img width="300px" src="img/nl22/Edito_NL22.jpg" alt="" />
     </div>
       <div class="float-end">
-        <a class="link-dark" href="#">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=22&cat=edito">Lire la suite...</a>
       </div>
     </div>
     </div>
       <div name="zoom" class="m-2 p-2 row bg-warning bg-opacity-50">
         <h3>ZOOM</h3>
         <div class="row">
-          <div class="col-4">
-          <img width="300px" src="test/zoom.jpg" alt="" />
+          <div class="col-3">
+          <img width="200px" src="img/nl22/Zoom_NL22.jpg" alt="" />
         </div>
         <div class="col">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in orci eu tortor iaculis aliquam. Nunc sit amet turpis eu orci cursus posuere. Vivamus pretium vestibulum rutrum. Donec tristique hendrerit vehicula. Ut eget ex a magna pretium gravida ac in elit. Maecenas eu elementum arcu, et malesuada leo. Quisque quis ligula lacinia nibh auctor hendrerit at ac libero. Morbi eu euismod mi, nec imperdiet risus. </p>
+        <p>Nous avons rencontré Sonia Burrel, virologue, qui vient de rejoindre notre unité au sein de l’équipe de Harald Wodrich et Marie-Edith Lafon.
+Elle a accepté de répondre à nos questions.</p>
         </div>
         <div class="float-end">
-        <a class="link-dark" href="#">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=22&cat=zoom">Lire la suite...</a>
         </div>
         </div>
-      </div><div name="zoom" class="m-2 p-2 row bg-success bg-opacity-50 text-white">
+      </div>
+      <div name="zoom" class="m-2 p-2 row bg-success bg-opacity-50 text-white">
         <h3>ZOOM</h3>
         <div class="row">
-          <div class="col-4">
-          <img width="300px" src="test/zoom.jpg" alt="" />
+          <div class="col-3">
+          <img width="200px" src="img/nl22/Zoom_NL22.jpg" alt="" />
         </div>
         <div class="col">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in orci eu tortor iaculis aliquam. Nunc sit amet turpis eu orci cursus posuere. Vivamus pretium vestibulum rutrum. Donec tristique hendrerit vehicula. Ut eget ex a magna pretium gravida ac in elit. Maecenas eu elementum arcu, et malesuada leo. Quisque quis ligula lacinia nibh auctor hendrerit at ac libero. Morbi eu euismod mi, nec imperdiet risus. </p>
+        <p>Nous avons rencontré Sonia Burrel, virologue, qui vient de rejoindre notre unité au sein de l’équipe de Harald Wodrich et Marie-Edith Lafon.
+Elle a accepté de répondre à nos questions.</p>
         </div>
         <div class="float-end">
-        <a class="link-dark" href="#">Lire la suite...</a>
+        <a class="link-light" href="article.php?nl=22&cat=zoom">Lire la suite...</a>
         </div>
         </div>
       </div>
@@ -66,44 +114,44 @@ Autoloader::register();
         <h3>Vie Scientifique</h3>
         <div class="row m-2">
         <div class="col mt-2">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet massa vitae lacus pulvinar rhoncus. Duis massa risus, consequat vitae risus sit amet, eleifend molestie justo. Nunc tristique sapien sit amet convallis gravida. Sed vitae diam a sem vestibulum faucibus ut eget erat. Mauris maximus magna ac risus tincidunt ullamcorper. Maecenas sed nunc a urna viverra volutpat ut at nunc. Vivamus ante nulla, tincidunt ac posuere in, molestie et lectus. Curabitur condimentum massa non orci sodales dictum. Phasellus sodales felis dignissim, scelerisque risus in, euismod lorem. Duis malesuada semper metus eget commodo. Vestibulum malesuada ex eget vulputate bibendum. Sed iaculis tristique venenatis. Phasellus nec blandit est. Mauris et lorem vel erat porta vestibulum non in libero.  </p>
+        <p>Après l’obtention du niveau concepteur en 2006 et plusieurs années en expérimentation animale, Corinne Asencio (équipe iMET) a décidé d’intégrer le Comité d’Ethique en Expérimentation Animale (C2EA) de Bordeaux en 2011. Elle y exerce le rôle d’experte.</p>
         </div>
-        <div class="col-4 m-2">
-        <img width="300px" src="test/viescientifique.jpg" alt="" />
+        <div class="col-4">
+        <img width="300px" src="img/nl22/Vie_labo_NL22.jpg" alt="" />
       </div>
         <div class="float-end">
-        <a class="link-dark" href="#">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=22&cat=vieLabo">Lire la suite...</a>
         </div>
         </div>
       </div>
       <div class="row m-2 bg-danger">
       <div name="photo" class="col-6 bg-dark text-center">
         <h3 class="text-white text-center">Photo du jour</h3>
-        <img class="p-2" width="50%" src="test/photo.jpg" alt=""/>
-        <p class="text-center text-white">Crédit inconnu</p>
+        <img class="p-2" width="100%" src="img/nl22/Photo_bis_NL22.png" alt=""/>
         <div class="float-start">
-          <a class="link-light" href="#">Lire la suite...</a>
+          <a class="link-light" href="article.php?nl=22&cat=photo">Lire la suite...</a>
         </div>
       </div>
       <div class="col-6 bg-danger align-self-center">
       <div name="chiffre" class="align-self-center">
-        <h1 class="display-1 text-white text-center">22</h1>
+        <h1 class="display-1 text-white text-center">12</h1>
       </div>
       <div class="float-start">
-        <a class="link-dark" href="#">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=22&cat=chiffre">Lire la suite...</a>
       </div>
     </div>
     </div>
       <div class="row m-2 p-2 bg-white" name="carteBlanche">
         <h3>Carte Blanche</h3>
-        <div class="col-4 m-2">
-        <img width="300px" src="test/carteBlanche.jpg" alt="" />
+        <div class="col m-2">
+        <img width="200px" src="img/nl22/Denis_NL22.jpg" alt="" class="rounded float-start"/>
+        <img width="200px" src="img/nl22/Harry_NL22.jpg" alt="" class="rounded float-end"/>
         </div>
         <div class="col">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ligula leo, elementum et consequat dictum, fringilla et augue. Nam at consectetur augue, vel vehicula odio. Duis semper aliquam dapibus. In orci turpis, malesuada non eros eu, consectetur tincidunt nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis tellus sit amet ante pharetra dictum. Aenean blandit fermentum tortor eget aliquet. Proin in condimentum lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sit amet lorem mattis, tempus arcu eu, pharetra tortor. Phasellus consectetur, neque sed facilisis vestibulum, est ligula sodales leo, eu scelerisque ligula diam non nisi. Etiam scelerisque sapien a ligula efficitur rutrum. Integer velit turpis, condimentum quis ex at, venenatis luctus odio. Nullam nibh risus, malesuada laoreet sollicitudin nec, ullamcorper at libero. Maecenas sit amet felis ligula. Morbi sit amet nibh a metus pulvinar rhoncus in nec nisi. </p>
+          <p>Les publications ne sont pas les seuls moyens de valider un projet scientifique. En effet le brevet, et/ou la licence permettent de valoriser des résultats novateurs. Au sein de notre UMR, plusieurs projets ont déjà donné lieu à l’obtention de brevets et/ou licences. Suite à un projet collaboratif entre H. Wodrich (équipe SpacVir) et D. Dacheux (équipe ProParaCyto), une licence auprès de la société EMD Millipore a été obtenue. De la pipette à la validation du projet, ils nous en disent un peu plus sur les différentes étapes ayant mené à la validation de cette licence.</p>
         </div>
         <div class="float-end">
-          <a class="link-dark" href="#">Lire la suite...</a>
+          <a class="link-dark" href="article.php?nl=22&cat=tribune">Lire la suite...</a>
         </div>
       </div>
       <div class="row m-2">
@@ -115,16 +163,15 @@ Autoloader::register();
 </svg>
         <div class="m-2 p-2">
         <ul>
-          <li>Arrivées </li>
-          <li>Demande de poste</li>
-          <li>Animations scientifiques</li>
-          <li>Céremonie des docteurs</li>
-          <li>Interview UB</li>
-          <li>Publications, DD, Qualité...</li>
+          <li>Arrivées, départs, distinctions </li>
+          <li>Recrutement</li>
+          <li>Valorisation scientifique</li>
+          <li>Nouvelle maquette de la NL</li>
+          <li>Publications, DD, Recette...</li>
         </ul>
       </div>
       <div class="float-start">
-        <a class="link-dark" href="#">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=22&cat=breve">Lire la suite...</a>
       </div>
       </div>
       <div class="col p-3 bg-dark bg-opacity-50 text-white" name="agenda">
@@ -135,8 +182,8 @@ Autoloader::register();
         <span class="h3 align-bottom"> Agenda</span>
         <div class="m-2 p-2">
           <ul>
-            <li>CAP SCIENCES </li>
-            <li>EMBO/EMBL symposia</li>
+            <li>Conférences SBM</li>
+            <li>CAP SCIENCE</li>
             <li>CONGRES</li>
             <li>Philosophy and Biology seminar in Bordeaux</li>
             <li>FORMATIONS</li>
@@ -144,7 +191,7 @@ Autoloader::register();
           </ul>
         </div>
         <div class="float-start">
-          <a class="link-light" href="#">Lire la suite...</a>
+          <a class="link-light" href="article.php?nl=22&cat=agenda">Lire la suite...</a>
         </div>
       </div>
     </div>
