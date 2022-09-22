@@ -28,7 +28,7 @@ $nl = $news->getNewsletter($id);
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
@@ -40,6 +40,10 @@ $nl = $news->getNewsletter($id);
         </div>
         <div class="carousel-item">
           <img src="img/nl22/ban_armyne.png" class="d-block w-100" alt="...">
+
+        </div>
+        <div class="carousel-item">
+          <img src="img/nl22/ban_mobilvir.png" class="d-block w-100" alt="...">
 
         </div>
         <div class="carousel-item">
@@ -62,7 +66,7 @@ $nl = $news->getNewsletter($id);
       </div>
 
       <div class="m-2 p-2 bg-white">
-        <h1 class="display-1">My Favorite Page <span class="text-danger">#<?=$id;?></span><img class="float-end me-2" width="180px" src="test/logo_mfp.gif"/></h1>
+        <h1 class="display-1"><span class="text-danger">M</span>y <span class="text-danger">F</span>avorite <span class="text-danger">P</span>age <span class="text-danger">#<?=$id;?></span><img class="float-end me-2" width="180px" src="test/logo_mfp.gif"/></h1>
       </div>
       <div class="row m-2 p-2 bg-white" name="edito">
         <h3><?= $nl->editoTitre;?></h3>
@@ -76,7 +80,7 @@ $nl = $news->getNewsletter($id);
     </div>
     </div>
       <div name="zoom" class="m-2 p-2 row bg-warning bg-opacity-50">
-        <?=$nl->zoomTitre;?>
+        <h3><?=$nl->zoomTitre;?></h3>
         <div class="row">
         <div class="col">
         <p><?=$nl->zoomResume;?></p>
@@ -86,25 +90,15 @@ $nl = $news->getNewsletter($id);
         </div>
         </div>
       </div>
-      <div name="zoom" class="m-2 p-2 row bg-success bg-opacity-50 text-white">
-        <?=$nl->zoomTitre;?>
-        <div class="row">
-        <div class="col">
-        <p><?=$nl->zoomResume;?></p>
-      </div>
-        <div class="float-end">
-        <a class="link-dark" href="article.php?nl=22&cat=zoom">Lire la suite...</a>
-        </div>
-        </div>
-      </div>
+    
       <div class="row m-2 p-2 bg-white" name="vie">
-        <?=$nl->vieTitre;?>
+        <h3><?=$nl->vieLaboTitre;?></h3>
         <div class="row">
         <div class="col">
-        <p><?=$nl->vieResume;?></p>
+        <p><?=$nl->vieLaboResume;?></p>
       </div>
         <div class="float-end">
-        <a class="link-dark" href="article.php?nl=22&cat=tribune">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=22&cat=vieLabo">Lire la suite...</a>
         </div>
         </div>
       </div>
