@@ -153,7 +153,7 @@ class Vector{
       fragment_cloned = ?,
       cloning_vector = ?,
       investigator = ?,
-      comments = ?
+      comments = ?,
       link_pdf = ?,
       link_biomol = ?
       WHERE id  = ?

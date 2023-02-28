@@ -48,11 +48,11 @@ if(!empty($_POST)){
   if(!empty($_POST['delete'])){
     $del = new TeamIMet;
     $del->newLog($id,$user->name);
-    //if($del->delAzote($id)){
-    //  Session::getInstance()->setFlash('success', "Tube decongele !");
-    //  App::redirect('imet/azote/');
-    //  exit();
-  //  }
+    if($del->delAzote($id)){
+      Session::getInstance()->setFlash('success', "Tube decongele !");
+      App::redirect('imet/azote/');
+      exit();
+   }
   }
 }
 

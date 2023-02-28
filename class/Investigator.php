@@ -38,7 +38,7 @@ class Investigator{
         $affiche .= " ";
         $affiche .= $invest->name;
       }
-      elseif($old = Database::query("SELECT * FROM $this->table_current WHERE id = ?",[$id])->fetch()){
+      elseif($old = Database::query("SELECT * FROM $this->table_old WHERE id = ?",[$id])->fetch()){
         $affiche = $old->firstname;
         $affiche .= " ";
         $affiche .= $old->name;

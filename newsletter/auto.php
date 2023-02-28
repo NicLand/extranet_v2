@@ -349,6 +349,38 @@ $lireLasuite = 'http://www.mfp.cnrs.fr/extranet_v2/newsletter/article.php?nl='.$
                                 </tr>
                               </tbody>
                             </table>
+                            <table class="p-1" role="presentation" border="0" cellpadding="0" cellspacing="0">
+                              <tbody>
+                                <tr>
+                                  <td style="line-height: 24px; font-size: 16px; margin: 0; padding: 4px;" align="left">
+                                    <div class="row" style="margin-right: -24px;">
+                                      <table class="" role="presentation" border="0" cellpadding="0" cellspacing="0" style="table-layout: fixed; width: 100%;" width="100%">
+                                        <tbody>
+                                          <tr>
+                                            <td class="col p-2 bg-white" style="line-height: 24px; font-size: 16px; min-height: 1px; font-weight: normal; margin: 0; padding: 8px 24px 8px 8px;" align="left" bgcolor="#ffffff" valign="top">
+                                              <h3 style="padding-top: 0; padding-bottom: 0; font-weight: 500; vertical-align: baseline; font-size: 28px; line-height: 33.6px; margin: 0;" align="left"><?= $donnees->vieTitre;?></h3>
+                                              <p style="line-height: 24px; font-size: 16px; width: 100%; margin: 0;" align="left"><?=$donnees->vieResume;?></p>
+                                              <div class="ax-rigth">
+                                                <a class="text-dark" href="<?= $lireLasuite;?>vie" style="color: #1a202c;">Lire la suite...</a>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <table class="s-1 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td style="line-height: 4px; font-size: 4px; width: 100%; height: 4px; margin: 0;" align="left" width="100%" height="4">
+                                    &#160;
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                             <table class="s-1 w-full" role="presentation" border="0" cellpadding="0" cellspacing="0" style="width: 100%;" width="100%">
                               <tbody>
                                 <tr>

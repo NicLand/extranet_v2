@@ -27,17 +27,4 @@ class Access{
     }
     return true;
   }
-
-  public function accessCommandeSpacvir(){
-    if($this->user->commande == NULL || $this->user->spacvir != 1){
-      return false;
-    }
-    return true;
-  }
-  public function accessCommandeReger(){
-    if($this->user->commande == NULL || $this->user->reger != 1){
-      return false;
-    }
-    return true;
-  }
 }

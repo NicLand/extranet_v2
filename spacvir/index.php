@@ -23,13 +23,11 @@ if(!$access->access()){
   exit();
 }
 //===========================================================
-
 $rapidAccess = [];
-$menuItem = Commande::getRapidAccess();
+$menuItem = [];
 $title = 'SpacVir';
 $titleLink = 'spacvir/index.php';
 echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
-
 echo '<a class="btn btn-secondary m-3" href="../index.php" role="button">Back to Extranet</a>';
 echo '<h1 class="mt-3">SpacVir Extranet</h1>';
 

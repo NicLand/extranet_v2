@@ -17,6 +17,7 @@ class App{
   const DB_USER_WP = 'lab0123sql0';
   const DB_PASS_WP = 'EYoXfmSf9122';
 */
+
   const HTTP_ROOT = "http://localhost:8888/extranet_v2";
   const HTTP_MFP = "http://localhost:8888/";
   const DB_NAME = 'mfp_db';
@@ -90,6 +91,15 @@ class App{
   const TABLE_REGER_AZOTE_CELL =              "extranet_reger_azote_cell";
   const TABLE_REGER_PROTOCOL =                "extranet_reger_protocoles";
   const TABLE_REGER_PROTOCOL_CATEGORY =       "extranet_reger_protocol_categories";
+
+  //=========== TABLE ANDEVIR =================================
+  const TABLE_ANDEVIR_ITEMS =                   "extranet_andevir_home_items";
+  const TABLE_ANDEVIR_PRIMERS =                 "extranet_andevir_primers";
+  const TABLE_ANDEVIR_AZOTE =                   "extranet_andevir_azote";
+  const TABLE_ANDEVIR_AZOTE_CELL =              "extranet_andevir_azote_cell";
+  const TABLE_ANDEVIR_PROTOCOL =                "extranet_andevir_protocoles";
+  const TABLE_ANDEVIR_PROTOCOL_CATEGORY =       "extranet_andevir_protocol_categories";
+
 
   static $db = null;
 
@@ -309,6 +319,27 @@ class App{
   }
   static function getTableRegerProtocolCategories(){
     return self::TABLE_REGER_PROTOCOL_CATEGORY;
+  }
+  static function getTableAndevirHomeItems(){
+    return self::TABLE_ANDEVIR_ITEMS;
+  }
+  static function getTableAndevirAzote(){
+    return self::TABLE_ANDEVIR_AZOTE;
+  }
+  static function getTableAndevirAzoteCell(){
+    return self::TABLE_ANDEVIR_AZOTE_CELL;
+  }
+  static function getTableAndevirChemicals(){
+    return self::TABLE_ANDEVIR_CHEMICALS;
+  }
+  static function getTableAndevirPrimers(){
+    return self::TABLE_ANDEVIR_PRIMERS;
+  }
+  static function getTableAndevirProtocols(){
+    return self::TABLE_ANDEVIR_PROTOCOL;
+  }
+  static function getTableAndevirProtocolCategories(){
+    return self::TABLE_ANDEVIR_PROTOCOL_CATEGORY;
   }
   static function getTablePublications(){
     return self::TABLE_PUBLICATIONS;

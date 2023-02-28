@@ -50,12 +50,12 @@ $titleLink = 'spacvir/index.php';
 echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
 ?>
 
-<h1 class="mt-3">SpacVir Virus List</h1>
+<h1 class="mt-3">SpacVir Plasmide List</h1>
 <?php
 echo '<a href="'.App::getRoot().'/spacvir/virus/new.php" class="btn btn-primary m-2" role="button">Add a new virus preparation</a>';
 
-$form = new TeamSpacvirForm($_POST);
-echo $form->inputSearch('#', $post, $opt);
+//$form = new TeamSpacvirForm($_POST);
+//echo $form->inputSearch('#', $post, $opt);
 
 $virus = new TeamSpacvirVirus;
 

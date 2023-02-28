@@ -48,7 +48,7 @@ if(!empty($_POST)){
 
     if($validator->isValid()){
 
-      $protocol = new Protocol;
+      $protocol = new Protocol("proparacyto");
       if($protocol->newProtocolCKE($_POST['name'],$_POST['category'],$_POST['core'],$user->id)){
         Session::getInstance('success', 'Protocol recorded !');
         App::redirect("proparacyto/protocol/");
@@ -66,7 +66,7 @@ if(!empty($_POST)){
       $validator->isUniq('category',$db,App::getTableProtocolCategories(),"The category already exists.");
     }
     if($validator->isValid()){
-      $protocol = new Protocol;
+      $protocol = new Protocol("proparacyto");
       if($protocol->newCategory($_POST['category'])){
         Session::getInstance('success', 'Category recorded !');
         App::redirect("proparacyto/protocol/");

@@ -24,7 +24,7 @@ if(!$access->access()){
 //===========================================================
 
 if(!empty($_POST)){
-  //var_dump($_POST);
+  var_dump($_POST);
   $validator = new Validator($_POST);
   $validator->isText('name',"the name is not valid");
   $db = new Database;

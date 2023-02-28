@@ -174,6 +174,7 @@ class Commande{
     }
   }
   public function upDealer($id,$fournisseur,$representant,$portable,$email_representant,$telephone,$fax,$email_commande,$website,$offre,$frais,$revendeur,$annee,$file){
+    
     if(Database::query("UPDATE $this->table_fournisseur SET
       fournisseur = ?,
       representant = ?,
@@ -315,21 +316,21 @@ class Commande{
     if ($type === "encours"){
       foreach ($res as $data){
         if ($data->valide == 0){
-          array_push($sorted, $data);
+          array_unshift($sorted, $data);
         }
       }
     }
     elseif ($type === "enlivraison"){
       foreach ($res as $data){
         if ($data->valide == 1 AND $data->livre == 0){
-          array_push($sorted, $data);
+          array_unshift($sorted, $data);
         }
       }
     }
     elseif($type === 'historique'){
       foreach ($res as $data){
         if ($data->valide == 1 AND $data->livre == 1){
-          array_push($sorted, $data);
+          array_unshift($sorted, $data);
         }
       }
     }
@@ -377,7 +378,7 @@ class Commande{
   }
   private function getTableHeader($type,$access){
     $affiche = "
-      <table class='table table-hover table-sm table-commande'>
+      <table class='table table-hover table-sm table-commande table-bordered'>
         <thead>
           <tr>
             <th scope='col'>Nom</th>
@@ -527,7 +528,7 @@ class Commande{
       return true;
     }
   }
-  public function upCommande($id,$dealer,$nomenclature,$quantite,$designation,$reference,$offre,$prix_u,$remise,$prix,$date,$commun,$commentaire){
+  public function upCommande($id,$dealer,$nomenclature,$quantite,$designation,$reference,$offre,$prix_u,$remise,$prix,$date,$commun,$commentaire,$bon_commande){
     if(Database::query("UPDATE $this->table_commande SET
       fournisseur = ?,
       nomenclature = ?,
@@ -540,9 +541,10 @@ class Commande{
       prix = ?,
       date_commande = ?,
       commun = ?,
-      comment = ?
+      comment = ?,
+      bon_commande = ?
       WHERE id =?",
-      [$dealer,$nomenclature,$quantite,$designation,$reference,$offre,$prix_u,$remise,$prix,$date,$commun,$commentaire,$id])){
+      [$dealer,$nomenclature,$quantite,$designation,$reference,$offre,$prix_u,$remise,$prix,$date,$commun,$commentaire,$bon_commande,$id])){
         return true;
       }
   }

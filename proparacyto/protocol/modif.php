@@ -27,7 +27,7 @@ if(isset($_GET['p']) && strlen($_GET['p']) == 3 && isset($_GET['id']) && $_GET['
   $id = $_GET['id'];
   if($p == 'cat'){
     $h1 = "Update Protocol category";
-    $cat = new Protocol;
+    $cat = new Protocol("proparacyto");
     $data = $cat->getCategory($id);
     if(!$data){
       App::redirect('proparacyto/protocol/');
@@ -36,7 +36,7 @@ if(isset($_GET['p']) && strlen($_GET['p']) == 3 && isset($_GET['id']) && $_GET['
   }
   if($p == 'pro'){
     $h1 = "Update Protocol";
-    $pro = new Protocol;
+    $pro = new Protocol("proparacyto");
     $data = $pro->getProtocolCKE($id);
     if(!$data){
       App::redirect('proparacyto/protocol/');
@@ -59,7 +59,7 @@ if(!empty($_POST)){
       $validator->isText('name','The protocol name is not valid.');
       $validator->isSelect('category', "Please choose a category for your protocol.");
       if($validator->isValid()){
-            $protocol = new Protocol;
+            $protocol = new Protocol("proparacyto");
             if($protocol->upProtocolCKE($id,$_POST['name'], $_POST['category'], $_POST['protocolBody'],$user->id)){
               Session::getInstance('success', 'Protocol updated !');
               App::redirect("proparacyto/protocol/");
@@ -83,7 +83,7 @@ if(!empty($_POST)){
       if(isset($_POST['update'])){
         $validator->isText('category','The category name is not valid.');
         if($validator->isValid()){
-          $protocol = new Protocol;
+          $protocol = new Protocol("proparacyto");
             if($protocol->upCategory($id, $_POST['category'])){
               Session::getInstance('success', 'Category recorded !');
               App::redirect("proparacyto/protocol/");
@@ -95,7 +95,7 @@ if(!empty($_POST)){
           }
       }
       elseif(isset($_POST['delete'])){
-        $delete = new Protocol;
+        $delete = new Protocol("proparacyto");
           if($delete->delCategory($id)){
             Session::getInstance()->setFlash('success', "Category deleted !");
             App::redirect('proparacyto/protocol/');

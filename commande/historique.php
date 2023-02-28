@@ -39,7 +39,7 @@ else{
   //===========================================================
   if(!empty($_POST)){
     $search = new Search($_POST['search'],$_POST['search_option']);
-    $search->getResult('commande', ['date_commande','date_valide'], 'DESC');
+    $search->getResult('commande', ['date_commande'], 'DESC');
     $r = $search->getData();
     $n = $search->getNumResult();
     //var_dump($r);

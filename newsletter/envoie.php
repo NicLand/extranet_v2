@@ -88,7 +88,7 @@ for($i=0;$i<$nbLignes;$i++){
 </form>
 </div>
 <?php
-$lien = 'https://www.mfp.cnrs.fr/extranet_v2/newsletter/auto.php?nl='.$NL;
+$lien = 'https://www.mfp.cnrs.fr/extranet_v2/newsletter/auto2.php?nl='.$NL;
 
 $messageNL = file_get_contents_curl($lien);
 
@@ -123,7 +123,7 @@ else
 	$passage_ligne = "\n";
 }
 //=====Déclaration des messages au format texte et au format HTML.
-$message_txt = "Bonjour, vous venez de recevoir la newsletter du MFP - Allez à l'adresse suivante pour la visualiser : https://www.mfp.cnrs.fr/mfp/newsletter/newsletter.php?nl=".$NL;
+$message_txt = "Bonjour, vous venez de recevoir la newsletter du MFP - Allez à l'adresse suivante pour la visualiser : https://www.mfp.cnrs.fr/extranet_v2/newsletter/newsletter.php?nl=".$NL;
 $message_html = $messageNL;
 //==========
 

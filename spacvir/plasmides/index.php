@@ -21,10 +21,17 @@ if(!$access->access()){
   App::redirect('index.php');
   exit();
 }
+$arr = [310,311,322];
+if(in_array($user->id,$arr)){
+    $super = true;
+}
+else{
+    $super = false;
+}
 //===========================================================
 if(!empty($_POST)){
   $search = new Search($_POST['search'],$_POST['search_option']);
-  $search->getResult('spacvir_plasmide', ['numero', 'name'], 'asc');
+  $search->getResult('spacvir_plasmides', ['id'], 'asc');
   $r = $search->getData();
   $n = $search->getNumResult();
   //var_dump($r);
@@ -50,29 +57,25 @@ $titleLink = 'spacvir/index.php';
 echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
 ?>
 
-<h1 class="mt-3">SpacVir Plasmides List</h1>
+<h1 class="mt-3">SpacVir Plasmide List</h1>
 <?php
-$plasmide = new TeamSpacvirPlasmide;
-
-echo '<a href="'.App::getRoot().'/spacvir/plasmide/new.php" class="btn btn-primary m-2" role="button">Add a new plasmide</a>';
+if($super == true){
+    echo '<a href="'.App::getRoot().'/spacvir/plasmides/new.php" class="btn btn-primary m-2" role="button">Add a new plasmide</a>';
+}
 
 $form = new TeamSpacvirForm($_POST);
 echo $form->inputSearch('#', $post, $opt);
 
 if(isset($n) && $n>0){
-  echo $plasmide->getSearchList($r,$n);
+    $plasmide = new TeamSpacvirPlasmide();
+    echo $plasmide->getSearchList($r,$n,$super);
 }
 else{
-
-if(isset($_GET['p'])){
-  $p=$_GET['p'];
-}
-else{
-  $p = $plasmide->nbPage();
-}
-echo $plasmide->paginationPlasmide($p);
-echo $plasmide->AfficheAllPlasmides($p);
+    $plasmide = new TeamSpacvirPlasmide();
+    echo $plasmide->getPlasmideData($super);
 }
 ?>
+
+
 
 <?= Footer::getFooter();

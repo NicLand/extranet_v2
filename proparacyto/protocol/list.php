@@ -48,7 +48,7 @@ $title = 'ProParaCyto';
 $titleLink = 'proparacyto/index.php';
 
 if(isset($_GET['cat']) && $_GET['cat'] != ""){$list = $_GET['cat'];}else{$list = "0";}
-  $new = new Protocol;
+  $new = new Protocol("proparacyto");
   $cat = $new->getCategory($list);
   $h1 = $cat->category;
   if($h1){

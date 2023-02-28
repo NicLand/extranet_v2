@@ -43,12 +43,13 @@ if(isset($_POST['update'])){
       foreach($_POST as $index => $valeur) {
          $$index = $valeur;
       }
+      if(isset($bon_commande)){$bon_commande = $bon_commande;}else{$bon_commande = 0;}
       if(isset($commun)){$commun = 1;}else{$commun = 0;}
       $prix_unitaire = floatval($prix_unitaire);
       $remise = floatval($remise);
       $prix = floatval(($prix_unitaire-(($prix_unitaire * $remise)/100)) * $quantite);
       $date = date("Y-m-d");
-      if($commande->upCommande($id,$dealer,$nomenclature,$quantite,$designation,$reference,$offre,$prix_unitaire,$remise,$prix,$date,$commun,$commentaire)){
+      if($commande->upCommande($id,$dealer,$nomenclature,$quantite,$designation,$reference,$offre,$prix_unitaire,$remise,$prix,$date,$commun,$commentaire,$bon_commande)){
         Session::getInstance()->setFlash('success',"La commande a été modifiée !");
         App::redirect('commande/commander.php');
         exit();
@@ -61,7 +62,7 @@ if(isset($_POST['update'])){
 if(isset($_POST['delete'])){
   if($commande->delCommande($id)){
     Session::getInstance()->setFlash('success',"La commande a été supprimée !");
-    App::redirect('commande/commande.php');
+    App::redirect('commande/commander.php');
     exit();
   }
 }
@@ -74,7 +75,9 @@ $rapidAccess = [];
 $menuItem = Commande::getRapidAccess();
 
 
-echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);?>
+echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
+if(isset($validator)){echo $validator->afficheErrors($errors,"EN");}
+?>
 
     <h1 class="m-3">Modification</h1>
 
@@ -86,12 +89,15 @@ echo $commande->selectDealers($modif->fournisseur);
 echo $commande->setOffre($modif->offre);
 echo $commande->selectNomenclatures($modif->nomenclature);
 echo $form->inputCard('quantite','number','Quantité :',$modif->quantite,'');
-echo $form->inputCard('designation','text','Désigantion : ',$modif->designation,'');
+echo $form->inputCard('designation','text','Désignation : ',$modif->designation,'');
 echo $form->inputCard('reference','text','Référence : ',$modif->reference,'');
 echo $form->inputCard('prix_unitaire','number','Prix Unitaire : ',$modif->prix_unitaire,'');
 echo $form->inputCard('remise','number','Remise : ',$modif->remise,'');
 echo $commande->checkCommande('commun','commun :',$modif->commun);
-echo $form->textAreaCard('commentaire','Commantaire : ',$modif->comment);
+echo $form->textAreaCard('commentaire','Commentaire : ',$modif->comment);
+if(isset($modif->bon_commande) && $modif->bon_commande !=0){
+  echo $form->inputCard('bon_commande','text','Bon de Commande : ',$modif->bon_commande,'');
+}
 echo $form->submit('primary','update','Modifier la commande');
 echo $form->delete("FR");
 echo $form->closeForm();

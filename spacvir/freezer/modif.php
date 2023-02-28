@@ -57,7 +57,7 @@ $titleLink = 'spacvir/index.php';
 
 echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
 ?>
-<h1 class="mt-3">-80°C Freezer</h1>
+<h1 class="mt-3">-80�C Freezer</h1>
 
 <?php
 $form = new cskForm($_POST);

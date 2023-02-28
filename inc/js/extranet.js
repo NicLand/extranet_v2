@@ -2,15 +2,6 @@
  * Function for the interactome Proparacyto.
  * N. LAndrein
  */
-function detailOffre() {
-   var detail = $("#dealer option:selected").attr("id");
- 	 document.getElementById('offre').value = detail;
-}
-
-function ajoutLigneCommande(){
-  var html = $('#commande2').html();
-  $('#formToInsert').prepend('<div id="commande" class="row">'+html+'</div>');
-}
 
 function ajout(td, ad_id, bd_id){
 	  if(td.getAttribute("clicked") ==1)return

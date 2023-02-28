@@ -42,7 +42,7 @@ echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
   echo '<div class="row row-cols-1 row-cols-md-3 m-3">';
 $link = "protocol.php?id=";
 
-$data = new Protocol;
+$data = new Protocol("proparacyto");
 
 //echo $data->afficheProtocolAccordeon();
 

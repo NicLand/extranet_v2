@@ -158,6 +158,6 @@ if(isset($validator)){echo $validator->afficheErrors($errors);}
 
 <?php
 //===========Affichage commande en cours===========
-echo $newC->getList("commande",$user->commande);
+echo $newC->getList("commande",$user->commande,"","");
  ?>
 <?= Footer::getFooter();

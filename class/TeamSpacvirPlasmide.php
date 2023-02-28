@@ -3,8 +3,8 @@ namespace Extranet;
 
 class TeamSpacvirPlasmide {
 
-  private $table;
-  private $perPage = 100;
+  private string $table;
+  private int $perPage = 100;
   private $count;
   private $nbPage;
   private $cPage;
@@ -30,84 +30,69 @@ class TeamSpacvirPlasmide {
     return Database::query("SELECT * FROM $this->table ORDER BY id ASC LIMIT $currentPage , $this->perPage")->fetchAll();
   }
 
-  public function afficheInvestigator($id){
-    if(isset($id)){
-      $invest = Database::query("SELECT name, firstname FROM mfp_extranet_users WHERE id = '$id'")->fetch();
-      if($invest){
-      $affiche = $invest->firstname." ".$invest->name;
-    }
-    else{
-      $affiche ="";
-    }
-    }
-    return $affiche;
-  }
-
-  private function getBiomolLink($link){
+    private function getBiomolLink($link){
     if(!empty($link)){
       return "<a href='".$this->biomolFolder.$link."' download='".$link."'><img style='width:40px' src='".App::getRoot().$this->biomolfileImg."'></a>";
     }
   }
-
-  private function getData($data=false){
+  private function validSeq($value){
+      if($value == 1){
+          $affiche = '<span style="color:green"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg></span>';
+      }
+      else{
+          $affiche = '<span style="color:red"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+</svg></span>';
+      }
+      return $affiche;
+  }
+  private function getData($super,$data=false){
     $affiche ="";
     if($data){
       foreach($data as $plasmide){
-        $affiche .= "<tr style='cursor: pointer;' onclick='document.location.href=\"../plasmide/plasmide.php?id=".$plasmide->id."\"'>
-                      <th class='align-middle'>".$plasmide->numero."</th>
+          if($super == true){
+              $position ="<td class='text-center align-middle'>".$plasmide->glycerol_stock."</td>
+                      <td class='text-center align-middle'>".$plasmide->dna_stock."</td>";
+              $num = "<th class='align-middle'>".$plasmide->number."</th>";
+          }
+          else{
+              $position = "";
+              $num = "";
+          }
+        $affiche .= "<tr style='cursor: pointer;' onclick='document.location.href=\"../plasmides/plasmide.php?id=".$plasmide->id."\"'>
+                      ".$num."
                       <td class='text-center align-middle'>".$plasmide->name."</td>
                       <td class='text-center align-middle'>".$plasmide->resistance."</td>
-                      <td class='text-center align-middle'>".$plasmide->origin."</td>
-                      <td class='text-center align-middle'>".$plasmide->vector."</td>
-                      <td class='text-center align-middle'>".$plasmide->insert."</td>
-                      <td class='text-center align-middle'>".$plasmide->cloning_site."</td>
-                      <td class='text-center align-middle'>".utf8_decode($plasmide->strain)."</td>
+                      <td class='text-center align-middle'>".$plasmide->origin_vector."</td>
+                      <td class='text-center align-middle'>".$plasmide->cloning_method."</td>
+                      <td class='text-center align-middle'>".$plasmide->inserted_dna."</td>
+                      <td class='text-center align-middle'>".$plasmide->investigateur."</td>
+                      <td class='text-center align-middle'>".utf8_decode($plasmide->bacterie)."</td>
+                      <td class='text-center align-middle'>".self::validSeq($plasmide->insert_seq)."</td>
+                      <td class='text-center align-middle'>".self::validSeq($plasmide->vector_seq)."</td>
+                      ".$position."
                       <td class='text-center align-middle'>".$plasmide->date."</td>
-                      <td class='text-center align-middle'>".self::getBiomolLink($plasmide->map)."</td>
+                      <td class='text-center align-middle'>".self::getBiomolLink($plasmide->seq_file)."</td>
                     </tr>";
       }
     }
     return $affiche;
   }
+    private function openTable($super){
+      if($super == true){
+          $entetes = ["Number","Name","Résistance","Vecteur d'origine","Méthode de clonage","Insert","Investigateur", "Bactérie","Insert seq","Vecteur seq","Stock glycérolé","ADN stock","Date","SnapGene"];
+      }
+      else{
+          $entetes = ["Number","Name","Résistance","Vecteur d'origine", "Méthode de clonage","Insert","Investigateur", "Bactérie","Insert seq","Vecteur seq","Date","SnapGene"];
 
-  public function AfficheAllPlasmides($cPage=false){
-    $data = self::setList($cPage);
-    $affiche = self::openTable();
-    foreach($data as $plasmide){
-      $affiche .= "<tr style='cursor: pointer;' onclick='document.location.href=\"../plasmide/plasmide.php?id=".$plasmide->id."\"'>
-                    <th class='align-middle'>".$plasmide->numero."</th>
-                    <td class='text-center align-middle'>".$plasmide->name."</td>
-                    <td class='text-center align-middle'>".$plasmide->resistance."</td>
-                    <td class='text-center align-middle'>".$plasmide->origin."</td>
-                    <td class='text-center align-middle'>".$plasmide->vector."</td>
-                    <td class='text-center align-middle'>".$plasmide->insert."</td>
-                    <td class='text-center align-middle'>".$plasmide->cloning_site."</td>
-                    <td class='text-center align-middle'>".utf8_decode($plasmide->strain)."</td>
-                    <td class='text-center align-middle'>".$plasmide->date."</td>
-                    <td class='text-center align-middle'>".self::getBiomolLink($plasmide->map)."</td>
-                  </tr>";
-    }
-    $affiche.= self::closeTable();
-    return $affiche;
-  }
-
-  private function openTable(){
-    $affiche ='<table class="table table-hover table-sm">
-      <thead>
-        <tr>
-          <th class="text-center align-middle" scope="col">Number</th>
-          <th class="text-center align-middle" scope="col">Name</th>
-          <th class="text-center align-middle" scope="col">Resistance</th>
-          <th class="text-center align-middle" scope="col">Origin</th>
-          <th class="text-center align-middle" scope="col">Vector</th>
-          <th class="text-center align-middle" scope="col">Insert</th>
-          <th class="text-center align-middle" scope="col">Cloning site</th>
-          <th class="text-center align-middle" scope="col">Bacterial strain</th>
-          <th class="text-center align-middle" scope="col">Date</th>
-          <th class="text-center align-middle" scope="col">SnapGene File</th>
-        </tr>
-      </thead>
-      <tbody>';
+      }
+        $affiche ='<table class="table table-hover table-sm"><thead><tr>';
+            foreach($entetes as $entete) {
+                $affiche .= "<th class='text-center align-middle' scope='col'>$entete</th>";
+            }
+            $affiche .= '</tr></thead><tbody>';
     return $affiche;
   }
 
@@ -115,47 +100,11 @@ class TeamSpacvirPlasmide {
     return '</tbody></table>';
   }
 
-  public function paginationPlasmide($cPage){
-    $nbPage = $this->nbPage();
-    $currentPage = ceil(($this->cPage($cPage)-1)* $this->perPage);
-    $affiche = '<nav aria-label="primer_vav">
-      <ul class="pagination pagination-sm">';
-        if($this->cPage <= 1){
-          $affiche .= '<li class="page-item disabled"><span class="page-link">Previous</span></li>';
-        }
-        else{
-          $affiche .= '<li class="page-item"><a class="page-link" href="index.php?p='.($this->cPage($cPage)-1).'">Previous</a></li>';
-        }
-      for ($i=1; $i<=$this->nbPage;$i++){
-        if($i == $cPage){
-          $affiche .= '<li class="page-item active" aria-current="page">
-            <span class="page-link">'.$i.'</span>
-          </li>';
-        }
-        else{
-          $affiche .= '<li class="page-item"><a class="page-link" href="index.php?p='.$i.'">'.$i.'</a></li>';
-        }
-      }
-      if($this->cPage < $nbPage){
-        $affiche .='<li class="page-item"><a class="page-link" href="index.php?p='.($this->cPage($cPage)+1).'">Next</a></li>';
-      }
-      else{
-        $affiche .= '<li class="page-item disabled"><span class="page-link">Next</span></li>';
-      }
-      $affiche .= '</ul></nav>';
-    return $affiche;
-  }
-
-  private function countPlasmide(){
+    private function countPlasmide(){
     $db = Database::query("SELECT COUNT(id) as nbPlasmide FROM $this->table");
     $this->count = $db->fetch();
     return $this->count;
   }
-
-  public function getCount(){
-    return $this->countPlasmide();
-  }
-
   public function nbPage(){
     $count = $this->countPlasmide()->nbPlasmide;
     $nbPage = ceil($count/$this->perPage);
@@ -173,17 +122,140 @@ class TeamSpacvirPlasmide {
       return $this->cPage;
   }
 
-  public function getSearchList($res,$num){
+  public function getSearchList($res,$num,$super){
     if($num>0){
     $affiche = '<h5 class="m-3">Number of results : '.$num.'</h5>';
-    $affiche .= self::openTable();
-    $affiche .= self::getData($res);
+    $affiche .= self::openTable($super);
+    $affiche .= self::getData($super,$res);
     $affiche .= self::closeTable();
       }
       return $affiche;
   }
 
-  private function getPlasmideData($data){
-
+  public function getPlasmideData($super){
+      $data = self::getPlasmides();
+    $affiche = self::openTable($super);
+    $affiche .= self::getData($super,$data);
+    $affiche .= self::closeTable();
+    return $affiche;
   }
+  public function afficheSinglePlasmide($id,$super){
+      $plasmide = self::getPlasmides($id);
+      if($super == true){
+          $num = "<tr class=''>
+              <th>Number</th>
+              <td>".$plasmide->number."</td>
+            </tr>
+            <tr>";
+          $position = "<tr>
+              <th>Glycérol Stock</th>
+              <td>".$plasmide->glycerol_stock."</td>
+            </tr>
+            <tr>
+              <th>DNA Stock</th>
+              <td>".$plasmide->dna_stock."</td>
+            </tr>
+            <tr>";
+          $modif = "<a href='modif.php?id=".$plasmide->id."' class='btn btn-primary'>Modifier</a>";
+      }
+      else{
+          $num = "";
+          $position ="";
+          $modif = "";
+      }
+      $affiche ="<div class='card mt-3'>
+        <h4 class='card-header'>".$plasmide->name."</h4>
+        <div class='card-body'>
+          <table class='table table-bordered table-hover'>
+            ".$num."
+            <tr>
+              <th>Réssistance</th>
+              <td>".$plasmide->resistance."</td>
+            </tr>
+            <tr>
+              <th>Insert</th>
+              <td>".$plasmide->inserted_dna."</td>
+            </tr>
+            <tr>
+              <th>Dna séquence</th>
+              <td>".$plasmide->dna_sequence."</td>
+            </tr>            <tr>
+              <th>Vecteur d'origine</th>
+              <td>".$plasmide->origin_vector."</td>
+            </tr>
+            <tr>
+              <th>Bactérie</th>
+              <td>".$plasmide->bacterie."</td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td>".$plasmide->date."</td>
+            </tr>
+            <tr>
+              <th>Investigateur</th>
+              <td>".$plasmide->investigateur."</td>
+            </tr>
+            <tr>
+              <th>Comments</th>
+              <td>".$plasmide->comments."</td>
+            </tr>
+            <tr>
+              <th>Séquence insert vérifiée</th>
+              <td>".self::validSeq($plasmide->insert_seq)."</td>
+            </tr>
+            <tr>
+              <th>Séquence vecteur vérifiée</th>
+              <td>".self::validSeq($plasmide->vector_seq)."</td>
+            </tr>
+            ".$position."
+              <th>Biomol File</th>
+              <td>".self::getBiomolLink($plasmide->seq_file)."</td>
+            </tr>
+          </table>
+          ".$modif."
+        </div>
+      </div>";
+      return $affiche;
+  }
+
+    public function newPlasmide($name, $dna_sequence, $number, $resistance, $investigateur, $origin_vector, $inserted_dna, $cloning_method, $bacterie, $vector_seq, $insert_seq, $glycerol_stock, $dna_stock, $date, $comments, $seqFileName)
+    {
+        if(Database::query("INSERT INTO $this->table (name, dna_sequence, number, resistance, investigateur, origin_vector, inserted_dna, cloning_method, bacterie, vector_seq, insert_seq, glycerol_stock, dna_stock, date, comments, seq_file) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            [
+                $name, $dna_sequence, $number, $resistance, $investigateur, $origin_vector, $inserted_dna, $cloning_method, $bacterie, $vector_seq, $insert_seq, $glycerol_stock, $dna_stock, $date, $comments, $seqFileName
+            ])){
+            return true;
+        }
+    }
+
+    public function upPlasmide($name, $dna_sequence, $number, $resistance, $investigateur, $origin_vector, $inserted_dna, $cloning_method, $bacterie, $vector_seq, $insert_seq, $glycerol_stock, $dna_stock, $date, $comments, $seq_file, $id)
+    {
+        if(Database::query("UPDATE $this->table SET
+            name = ?,
+            dna_sequence = ?,
+            number = ?,
+            resistance = ?,
+            investigateur = ?,
+            origin_vector = ?,
+            inserted_dna = ?,
+            cloning_method = ?,
+            bacterie = ?,
+            vector_seq = ?,
+            insert_seq = ?,
+            glycerol_stock = ?,
+            dna_stock = ?,
+            date = ?,
+            comments = ?,
+            seq_file = ?
+            WHERE id = ?"
+            ,[$name, $dna_sequence, $number, $resistance, $investigateur, $origin_vector, $inserted_dna, $cloning_method, $bacterie, $vector_seq, $insert_seq, $glycerol_stock, $dna_stock, $date, $comments, $seq_file, $id])){
+            return true;
+        }
+    }
+
+    public function deletePlasmide($id){
+        if(Database::query("DELETE FROM $this->table WHERE id = $id")){
+            return true;
+        }
+    }
 }

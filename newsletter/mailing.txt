@@ -1,8 +1,5 @@
-magamba.tounkara@gmail.com
-meunier.camille.pm@gmail.com
 roumegouschloe@gmail.com
 aquitaine.microbiologie.team@gmail.com
-ramanantsalama.rijatiana@gmail.com
 auffrayjulie@gmail.com
 audrey.toirot@gmail.com
 denis.dacheux@ipb.fr
@@ -18,7 +15,6 @@ e.marza@iecb.u-bordeaux.fr
 n.lopez-lozano@iecb.u-bordeaux.fr
 m.villalba-velazquez@iecb.u-bordeaux.fr
 chloe.lambert.1@etu.u-bordeaux.fr
-miharisoa.ramanantsalama@etu.u-bordeaux.fr
 guillaume.beucher@etu.u-bordeaux.fr
 chloe.roumegous@etu.u-bordeaux.fr
 catherine.garbuio-alis@u-bordeaux.fr
@@ -40,9 +36,9 @@ corinne.asencio@u-bordeaux.fr
 valerie.fitton-ouhabi@u-bordeaux.fr
 delphine.lapaillerie@u-bordeaux.fr
 fabienne.rayne@u-bordeaux.fr
+ophelie.cosnefroy@u-bordeaux.fr
 otgonjargal.byambaa@u-bordeaux.fr
 paul.lesbats@u-bordeaux.fr
-magamba.tounkara@u-bordeaux.fr
 floriane.lagadec@u-bordeaux.fr
 anne.cayrel@u-bordeaux.fr
 marie-line.andreola@u-bordeaux.fr
@@ -66,6 +62,7 @@ eugenia.basyuk@u-bordeaux.fr
 shashank.khare@u-bordeaux.fr
 nicolas.reyes@u-bordeaux.fr
 julie.auffray@u-bordeaux.fr
+anastasiia.tymchenko@u-bordeaux.fr
 miryam.canul-tec@u-bordeaux.fr
 sabine.aillerie@u-bordeaux.fr
 yoann.millerioux@u-bordeaux.fr
@@ -82,7 +79,6 @@ frederic.bringaud@u-bordeaux.fr
 brigitte.couderc@u-bordeaux.fr
 karine.frenal@u-bordeaux.fr
 laure.coulange@u-bordeaux.fr
-alicia.silvant@u-bordeaux.fr
 aline.rimoldi-ribeiro@u-bordeaux.fr
 chloe.morel@u-bordeaux.fr
 emmanuel.nji@u-bordeaux.fr
@@ -112,6 +108,8 @@ christophe.velours@u-bordeaux.fr
 secretariat.virologie@u-bordeaux.fr
 erika.pineda-ramirez@u-bordeaux.fr
 sandeep-kumar.mulukala-narasimha@u-bordeaux.fr
+chloe.lambert@u-bordeaux.fr
+bachir.boureima-abdou@u-bordeaux.fr
 pascale.trimoulet@chu-bordeaux.fr
 isabelle.accoceberry@chu-bordeaux.fr
 marie-edith.lafon@chu-bordeaux.fr

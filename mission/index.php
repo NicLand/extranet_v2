@@ -34,36 +34,36 @@ echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);?>
 
 <div class="row justify-content-center">
   <div class="col-10">
-    <h1 align="center">NOTE D&rsquo;INFORMATION SUR LES MISSIONS</h1>
+    <h1 align="center">NOTE D'INFORMATION SUR LES MISSIONS</h1>
     <h3>I - Avant tout d&eacute;placement</h3>
-     <p>Vous devez &ecirc;tre en possession d&rsquo;un ordre de mission &eacute;tabli <strong>pr&eacute;alablement</strong> &agrave; votre d&eacute;part.</p>
+     <p>Vous devez être en possession d'un ordre de mission établi <strong>préalablement</strong> à votre départ.</p>
     <h4 align="center">AUCUNE MISSION NE SERA FAITE &Agrave; POSTERIORI POUR REGULARISATION</h4>
-    <h5>Pour cela, il est n&eacute;cessaire de&nbsp;:</h5>
+    <h5>Pour cela, il est nécessaire de :</h5>
     <ol>
-      <li>remplir une<strong><a href="mission.php" style="color:red;"> >> demande d&rsquo;ordre de mission <<</a></strong></li>
-      <p>-10 jours minimum avant le d&eacute;part pour les missions France</p>
-      <p> - 1 mois* minimum avant le d&eacute;part pour les missions &agrave; l'&eacute;tranger
+      <li>remplir une<strong><a href="mission.php" style="color:red;"> >> demande d'ordre de mission <<</a></strong></li>
+      <p>-10 jours minimum avant le départ pour les missions France</p>
+      <p> - 1 mois* minimum avant le départ pour les missions à l'étranger
       </p>
 
-      <p><em>* Ce d&eacute;lai est &agrave; respecter imp&eacute;rativement, car nous devons pour chaque mission &agrave; l&rsquo;&eacute;tranger contacter le Fonctionnaire S&eacute;curit&eacute; D&eacute;fense afin de demander l&rsquo;autorisation d&rsquo;envoi de missionnaires dans les pays &agrave; risques. Cette d&eacute;marche doit &ecirc;tre toujours faite avant signature de l&rsquo;ordre de mission</em></p>
+      <p><em>* Ce délai est à respecter impérativement, car nous devons pour chaque mission à l'étranger contacter le Fonctionnaire Sécurité Défense afin de demander l'autorisation d'envoi de missionnaires dans les pays à risques. Cette démarche doit être toujours faite avant signature de l'ordre de mission</em></p>
       <p>&nbsp;</p>
-      <li>Joindre un R.I.B ou R.I.P pour la premi&egrave;re mission ou en cas de changement de compte bancaire ou postal.      </li></ol>
-    <p><strong>Pour les participations &agrave; des colloques</strong>, joindre les pages du programme indiquant la date de la manifestation et les prestations &eacute;ventuellement comprises dans les frais d'inscription : nombre de repas, nuit&eacute;es.</p>
-      <p>En cas d&rsquo;utilisation du v&eacute;hicule personnel il est n&eacute;cessaire de joindre une copie de la carte grise, et de l&rsquo;attestation d&rsquo;assurance. Si vous transportez des passagers, n&rsquo;oubliez pas d&rsquo;indiquer leurs noms.</p>
+      <li>Joindre un R.I.B ou R.I.P pour la première mission ou en cas de changement de compte bancaire ou postal.</li></ol>
+    <p><strong>Pour les participations à des colloques</strong>, joindre les pages du programme indiquant la date de la manifestation et les prestations éventuellement comprises dans les frais d'inscription : nombre de repas, nuitées.</p>
+      <p>En cas d'utilisation du véhicule personnel il est nécessaire de joindre une copie de la carte grise, et de l'attestation d'assurance. Si vous transportez des passagers, n&rsquo;oubliez pas d'indiquer leurs noms.</p>
       <p>&nbsp;</p>
 
-    <h3>II - &Agrave; votre retour de mission</h3>
-    <p>Pour un remboursement rapide des frais engag&eacute;s, il est indispensable de ramener tr&egrave;s vite &agrave; Genevi&egrave;ve, Val&eacute;rie ou Isabelle les pi&egrave;ces justificatives afin qu&rsquo;elles puissent &eacute;tablir l&rsquo;&eacute;tat de frais de d&eacute;placement correspondant.</p>
-    <h5><em>Pour les missions France&nbsp;:</em></h5>
-    <p> * Titre de transport originaux&nbsp;: billet pour le train, coupon de vol pour l&rsquo;avion, re&ccedil;u ou facture &agrave; votre nom pour un taxi<br />
-      * Ticket de p&eacute;age&nbsp;: re&ccedil;us (originaux)<br />
+    <h3>II - À votre retour de mission</h3>
+    <p>Pour un remboursement rapide des frais engagés, il est indispensable de ramener très vite à Geneviève, Valérie ou Sandrine les pièces justificatives afin qu'elles puissent établir l'état de frais de déplacement correspondant.</p>
+    <h5><em>Pour les missions France :</em></h5>
+    <p> * Titre de transport originaux : billet pour le train, coupon de vol pour l'avion, reçu ou facture à votre nom pour un taxi<br />
+      * Ticket de péage : reçus (originaux)<br />
      * Ticket de parking : tickets (originaux)<br />
-      * Ticket RER, M&eacute;tro, Tram, Bus<br />
-      * H&eacute;bergement&nbsp;: facture d&rsquo;h&ocirc;tel &eacute;tablie &agrave; votre nom</p>
-    <h5><em>Pour les missions Etranger&nbsp;:</em></h5>
-     <p> * Titre de transport originaux&nbsp;: billet pour le train, coupon de vol pour l&rsquo;avion, re&ccedil;u ou facture pour un taxi<br />
-      * H&eacute;bergement&nbsp;: facture d&rsquo;h&ocirc;tel &eacute;tablie &agrave; votre nom<br />
-    * Attestation de pr&eacute;sence au Congr&egrave;s</p>
+      * Ticket RER, Métro, Tram, Bus<br />
+      * Hébergement : facture d'hôtel établie à votre nom</p>
+    <h5><em>Pour les missions Etranger :</em></h5>
+     <p> * Titre de transport originaux : billet pour le train, coupon de vol pour l'avion, reçu ou facture pour un taxi<br />
+      * Hébergement : facture d'hôtel établie à votre nom<br />
+    * Attestation de présence au Congrès</p>
   </div>
 </div>
 

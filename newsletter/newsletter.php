@@ -14,7 +14,7 @@ $nl = $news->getNewsletter($id);
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>My Favorite Page #22</title>
+    <title>My Favorite Page #<?=$id;?></title>
     <style>
        /* Add custom classes and styles that you want inlined here */
     </style>
@@ -75,7 +75,7 @@ $nl = $news->getNewsletter($id);
         <?= $nl->editoResume;?>
       </div>
       <div class="float-end">
-        <a class="link-dark" href="article.php?nl=22&cat=edito">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=edito">Lire la suite...</a>
       </div>
     </div>
     </div>
@@ -86,11 +86,11 @@ $nl = $news->getNewsletter($id);
         <p><?=$nl->zoomResume;?></p>
       </div>
         <div class="float-end">
-        <a class="link-dark" href="article.php?nl=22&cat=zoom">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=zoom">Lire la suite...</a>
         </div>
         </div>
       </div>
-    
+
       <div class="row m-2 p-2 bg-white" name="vie">
         <h3><?=$nl->vieLaboTitre;?></h3>
         <div class="row">
@@ -98,7 +98,7 @@ $nl = $news->getNewsletter($id);
         <p><?=$nl->vieLaboResume;?></p>
       </div>
         <div class="float-end">
-        <a class="link-dark" href="article.php?nl=22&cat=vieLabo">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=vieLabo">Lire la suite...</a>
         </div>
         </div>
       </div>
@@ -110,7 +110,7 @@ $nl = $news->getNewsletter($id);
         <?=$nl->photoResume;?>
         </div>
         <div class="float-start">
-          <a class="link-light" href="article.php?nl=22&cat=photo">Lire la suite...</a>
+          <a class="link-light" href="article.php?nl=<?=$id;?>&cat=photo">Lire la suite...</a>
         </div>
       </div>
       </div>
@@ -119,7 +119,7 @@ $nl = $news->getNewsletter($id);
         <h1 class="display-1 text-white text-center"><?=$nl->chiffreTitre;?></h1>
       </div>
       <div class="float-start">
-        <a class="link-dark" href="article.php?nl=22&cat=chiffre">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=chiffre">Lire la suite...</a>
       </div>
     </div>
     </div>
@@ -129,9 +129,18 @@ $nl = $news->getNewsletter($id);
           <?= $nl->tribuneResume;?>
         </div>
         <div class="float-end">
-          <a class="link-dark" href="article.php?nl=22&cat=tribune">Lire la suite...</a>
+          <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=tribune">Lire la suite...</a>
         </div>
       </div>
+      <div class="row m-2 p-2 bg-white" name="Vie">
+        <div class="col">
+          <h3><?= $nl->vieTitre;?></h3>
+          <?= $nl->vieResume;?>
+        </div>
+        <div class="float-end">
+          <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=vie">Lire la suite...</a>
+        </div>
+      </div>  
       <div class="row m-2">
       <div name="breves" class="col p-3 bg-info bg-opacity-50">
         <span class="h3 align-bottom">Brèves de paillasse...  </span>
@@ -140,16 +149,10 @@ $nl = $news->getNewsletter($id);
   <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z"/>
 </svg>
         <div class="m-2 p-2">
-        <ul>
-          <li>Arrivées, départs, distinctions </li>
-          <li>Recrutement</li>
-          <li>Valorisation scientifique</li>
-          <li>Nouvelle maquette de la NL</li>
-          <li>Publications, DD, Recette...</li>
-        </ul>
+        <?= $nl->breveResume;?>
       </div>
       <div class="float-start">
-        <a class="link-dark" href="article.php?nl=22&cat=breve">Lire la suite...</a>
+        <a class="link-dark" href="article.php?nl=<?=$id;?>&cat=breve">Lire la suite...</a>
       </div>
       </div>
       <div class="col p-3 bg-dark bg-opacity-50 text-white" name="agenda">
@@ -169,18 +172,18 @@ $nl = $news->getNewsletter($id);
           </ul>
         </div>
         <div class="float-start">
-          <a class="link-light" href="article.php?nl=22&cat=agenda">Lire la suite...</a>
+          <a class="link-light" href="article.php?nl=<?=$id;?>&cat=agenda">Lire la suite...</a>
         </div>
       </div>
     </div>
     <div name="footer" class="m-2 p-2 bg-white">
       <div class="row text-center">
-        <p>Cette lettre est publiée par le comité de rédaction de la Newsletter de l'UMR5234</p>
-        <p>Pour toute question concernant cette lettre, écrivez à Christina Calmels.</p>
-        <p>Responsable de la publication : Frédéric Bringaud</p>
-        <p>Responsables de la rédaction : Christina Calmels et Patricia Pinson</p>
-        <p>Comité de rédaction : Corinne Asencio, Marie-Lise Blondot, Floriane Lagadec, Paul Lesbats.</p>
-        <p>Intégration / Design : Nicolas Landrein.</p>
+        <p class="fst-italic">Cette lettre est publiée par le comité de rédaction de la Newsletter de l'UMR5234</p>
+        <p class="fst-italic">Pour toute question concernant cette lettre, écrivez à Christina Calmels.</p>
+        <p class="fst-italic">Responsable de la publication : Frédéric Bringaud</p>
+        <p class="fst-italic">Responsables de la rédaction : Christina Calmels et Patricia Pinson</p>
+        <p class="fst-italic">Comité de rédaction : Corinne Asencio, Marie-Lise Blondot, Floriane Lagadec, Paul Lesbats.</p>
+        <p class="fst-italic">Intégration / Design : Nicolas Landrein.</p>
       </div>
     </div>
     </div>

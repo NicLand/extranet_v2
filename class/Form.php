@@ -49,9 +49,7 @@ class Form{
   public function input($name, $type, $label, $value, $smallText=false){
     $affiche = '<div class="form-group col"><label class="col-form-label">'. ucfirst($label).'</label>';
     $affiche.= '<input type="'.$type.'" step="any" name = "' . $name . '" value="'.$value.'" class="form-control"/>';
-    if(!empty($smallText)){
-      $affiche .= '<small class="form-text text-muted">'.$smallText.'</small>';
-    }
+
     $affiche .='</div>';
     return $affiche;
   }
@@ -108,7 +106,7 @@ class Form{
   }
 
   public function openFormHorizontal(){
-    return "<form action='".$_SERVER["PHP_SELF"]."' method='post'><div class='row gy-2 gx-3 align-items-center'>";
+    return "<form action='#' method='post'><div class='row gy-2 gx-3 align-items-center'>";
   }
 
   public function closeFormHorizontal(){

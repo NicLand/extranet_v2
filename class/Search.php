@@ -48,14 +48,17 @@ class Search{
   private $table_commande;
   private $commande_fields = ['fournisseur', 'user', 'reference', 'bon_commande', 'bon_livraison', 'designation','nomenclature'];
 
-  private $table_spacvir_plasmide;
-  private $spacvir_plasmide_fields = ['numero','name','origin','vector','insert'];
+  private $table_spacvir_plasmides;
+  private $spacvir_plasmides_fields = ['number','name','resistance','investigateur','origin_vector','inserted_dna','comments'];
 
   private $table_imet_souchier;
   private $imet_souchier_fields = ['plasmide','fragment'];
 
   private $table_imet_azote;
   private $imet_azote_fields = ['modification','strain','forme','manipulateur','commentaire'];
+
+  private $table_andevir_azote;
+  private $andevir_azote_fields = ['name','origin','freezing_med','investigateur','comments', 'maintenance'];
 
   private $table_imet_azote_log;
   private $imet_azote_log_fields = ['textLog','dateLog','userLog'];
@@ -99,7 +102,7 @@ class Search{
     $this->table_strain = App::getTableStrains();
     $this->table_commande_fournisseur = App::getTableFournisseur();
     $this->table_commande = App::getTableCommande();
-    $this->table_spacvir_plasmide = App::getTableSpacvirPlasmides();
+    $this->table_spacvir_plasmides = App::getTableSpacvirPlasmides();
 
     $this->table_imet_souchier = App::getTableIMetSouchier();
     $this->table_imet_azote = App::getTableIMetAzote();
@@ -110,6 +113,8 @@ class Search{
     $this->table_reger_primer = App::getTableRegerPrimers();
     $this->table_reger_azote = App::getTableRegerAzote();
     $this->table_reger_chemical = App::getTableRegerChemicals();
+
+    $this->table_andevir_azote = "extranet_andevir_azote";
 
     $this->query_prepared = 1;
 

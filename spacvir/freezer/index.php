@@ -17,7 +17,7 @@ if(!$user){
 }
 $access = new Access("spacvir", $user);
 if(!$access->access()){
-  Session::setFlash('danger', "Vous n'�tes pas autoris� �� acc�der � cette page.");
+  Session::setFlash('danger', "Vous n'êtes pas autorisé à accéder à cette page.");
   App::redirect('index.php');
   exit();
 }
@@ -47,7 +47,7 @@ $titleLink = 'spacvir/index.php';
 
 echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
 ?>
-<h1 class="mt-3">-80°C Freezer</h1>
+<h1 class="mt-3">-80�C Freezer</h1>
 
 <?php
 $freezer = new TeamSpacvirFreezer;

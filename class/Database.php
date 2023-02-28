@@ -36,7 +36,8 @@ class Database{
         $req->execute($params);
       }
       else{
-        $req = self::getPDO()->query($query);
+        $req = self::getPDO()->prepare($query);
+        $req->execute();
       }
       //var_dump($req);
         return $req;

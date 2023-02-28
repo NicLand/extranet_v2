@@ -30,12 +30,9 @@ class Mission{
     return $this->hasMission($user);
   }
 
-  public function newMission($d, $user, $keys, $val, $token){
-    var_dump($keys);
-    /*
+  public function newMission(){
     if(Database::query("INSERT INTO $this->table (category) VALUES (?)",[$cat])){
       return true;
     }
-    */
   }
 }

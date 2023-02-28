@@ -35,7 +35,7 @@ $titleLink = 'proparacyto/index.php';
 
 echo Header::getHeader($title, $titleLink, $rapidAccess, $menuItem);
 
-$data = new Protocol;
+$data = new Protocol("proparacyto");
 echo $data->afficheSingleCKE($id);
 
 ?>

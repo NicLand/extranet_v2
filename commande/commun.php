@@ -15,7 +15,7 @@ if(!$user){
   exit();
 }
 $access = new Access("commande", $user);
-if(!$access->accessCommandeSpacvir()){
+if(!$access->accessCommande()){
   Session::setFlash('danger', "Vous n'êtes pas autorisé à accéder à cette page.");
   App::redirect('commande/commander.php');
   exit();
