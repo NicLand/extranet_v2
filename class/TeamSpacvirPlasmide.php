@@ -85,7 +85,7 @@ class TeamSpacvirPlasmide {
           $entetes = ["Number","Name","Résistance","Vecteur d'origine","Méthode de clonage","Insert","Investigateur", "Bactérie","Insert seq","Vecteur seq","Stock glycérolé","ADN stock","Date","SnapGene"];
       }
       else{
-          $entetes = ["Number","Name","Résistance","Vecteur d'origine", "Méthode de clonage","Insert","Investigateur", "Bactérie","Insert seq","Vecteur seq","Date","SnapGene"];
+          $entetes = ["Name","Résistance","Vecteur d'origine", "Méthode de clonage","Insert","Investigateur", "Bactérie","Insert seq","Vecteur seq","Date","SnapGene"];
 
       }
         $affiche ='<table class="table table-hover table-sm"><thead><tr>';
